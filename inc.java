@@ -1,5 +1,5 @@
 import java.util.*;
-public class sequence {
+public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -16,9 +16,10 @@ public class sequence {
 			int maxi = a[i];
 			for(int j = i+1; j < n; j++ )
 			{
-				if (a[j] > a[i])
+				if (a[j] > maxi)
 				{
 					count++;
+					maxi = a[j];
 				}
 				else
 				{
