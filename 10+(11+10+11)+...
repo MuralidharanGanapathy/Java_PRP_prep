@@ -1,0 +1,20 @@
+import java.util.*;
+public class series {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int series = sc.nextInt();
+		int starting_value = sc.nextInt();
+		int inc = sc.nextInt();
+		int sum = 0, imp = 1;
+		for(int i = 1; i <= series; i++)
+		{
+			sum += (starting_value*i) + ((starting_value-1)*(imp-i));
+			starting_value+=inc;
+			imp+=2;
+		}
+		System.out.println(sum);
+
+	}
+
+}
