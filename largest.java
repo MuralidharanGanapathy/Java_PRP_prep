@@ -1,21 +1,22 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class largest {
+	public static String validator(String a)
+	{
+		if (a.length() < 5)
+		{
+			int len = 5 - a.length();
+			for(int i = 0; i < len; i++)
+			{
+				a = "0" + a;
+			}
+		}
+		return a;
+	}
 	public static String[] sorter(int arr[])
 	{
 		String a[] = new String[3];
-		int temp;
-		for(int i = 0; i < arr.length; i++)
-		{
-			for(int j = 0; j < arr.length; j++)
-			{
-				if (arr[i] < arr[j])
-				{
-					temp = arr[i];
-					arr[i] = arr[j];
-					arr[j] = temp;
-				}
-			}
-		}
+		Arrays.sort(arr);
 		a[0] = arr[arr.length - 1] + "";
 		a[1] = arr[arr.length - 2] + "";
 		a[2] = arr[arr.length - 3] + "";
@@ -27,6 +28,9 @@ public class largest {
 		String ip1 = sc.nextLine();
 		String ip2 = sc.nextLine();
 		String ip3 = sc.nextLine();
+		ip1 = validator(ip1);
+		ip2 = validator(ip2);
+		ip3 = validator(ip3);
 		String ip1_array[] = ip1.split("");
 		String ip2_array[] = ip2.split("");
 		String ip3_array[] = ip3.split("");
